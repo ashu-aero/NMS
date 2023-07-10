@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>NMS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/css/navbar.css" />
+ <link rel="stylesheet" href="/css/formstyle.css">
+  <link rel="icon"href="/image/icon.png"  type="image/x-icon">
+
+ <!-- cdn for icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+   
+  
+ 
+</head>
+<body>
+
+<div class="topnav">
+  <a  href="/home">Home</a>
+  <a class="active" href="/add_device">Device</a>
+  <div class="topnav-right">
+    <a href="/">Logout</a>
+  </div>
+</div>
+
+<div class="container">
+
+		<!-- form start -->
+		<div class="my-form">
+			<div class="form-title">
+				<h1>Add Your Device</h1>
+			</div>
+			<!-- main form -->
+			<form th:action="@{/add_device}" th:object="${device}"	method="post">
+
+				
+				<div class="single-input">
+				 
+					<span><i class="fas fa-desktop"></i></span> 
+					<input type="text" name="device_name" id="device_name" required="required" placeholder="Enter device name"/>
+				</div>
+				
+				<div class="single-input">
+					<span><i class="fas fa-map-marker-alt"></i></span> 
+					<input type="text" name="location" id="location" required="required" placeholder="Enter location name"/>
+				</div>
+				
+				
+				<div class="single-input">
+					<span><i class="fas fa-network-wired"></i></span> 
+					<input type="text" name="ip_address" id="ip_address" required="required" placeholder="Enter ip address"/>
+				</div>
+				
+				<div class="single-input">
+					<span><i class="fas fa-user"></i></span> 
+					<input type="text" name="network_provider" id="network_provider" required="required" placeholder="Enter network provider"/>
+				</div>
+
+
+			 <div class="single-input submit-btn">
+				<input type="submit" value="Add Device">
+			</div>
+
+		</form>
+		</div>
+	</div>
+
+</body>
+</html>

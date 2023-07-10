@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>NMS</title>
+   <link rel="icon"href="/image/icon.png"  type="image/x-icon">
+  <!-- fontawesome cdn for icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+  <!-- main css file -->
+  <link rel="stylesheet" href="/css/formstyle.css">
+  </head>
+<body>
+<div class="container">
+    
+    <!-- form start -->
+  <div class="my-form">
+    <div class="form-title">
+      <h1>Member Login</h1>
+    </div>
+    <!-- main form -->
+    
+    <form th:action="@{/process_login}" th:object="${user}"  method="post" > 
+      <div class="single-input">
+        <span><i class="fas fa-user"></i></span>
+        <input type="text" name="username" id="username" placeholder="Username" value="ab" required="required">
+      </div>
+      <div class="single-input">
+        <span><i class="fas fa-unlock"></i></span>
+        <input type="password" name="password" id="password"  placeholder="Password" value="111111" required="required">
+      </div>
+
+      <div class="single-input submit-btn">
+        <input type="submit" value="Login">
+      </div>
+    </form>
+ 
+       <center><b><span>Not registered? <a th:href="@{/register}" style=" text-decoration: none;">Signup here</a></b></span></center>
+    
+  </div>
+
+</div>
+ 
+</body>
+</html>

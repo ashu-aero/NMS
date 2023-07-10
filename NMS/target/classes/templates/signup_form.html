@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>NMS</title>
+	
+	 <link rel="icon"href="/image/icon.png"  type="image/x-icon">
+	 <link rel="icon"href="/image/icon.png"  type="image/x-icon">
+	  <!-- fontawesome cdn for icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+  <!-- main css file -->
+    <link rel="stylesheet" href="/css/formstyle.css">
+ </head>
+<body>
+	<div class="container">
+
+		<!-- form start -->
+		<div class="my-form">
+			<div class="form-title">
+				<h1>User Signup</h1>
+			</div>
+			<!-- main form -->
+			<form th:action="@{/process_register}" th:object="${user}"
+				method="post">
+
+
+				
+				<div class="single-input">
+					<span><i class="fas fa-user"></i></span> <input type="text"
+						th:field="*{name}" required minlength="2" maxlength="100"
+						placeholder="Name" />
+				</div>
+
+				<div class="single-input">
+					<span><i class="fas fa-envelope"></i></span> <input type="email"
+						th:field="*{email}" class="form-control" required
+						placeholder="email" />
+				</div>
+	 
+
+		 
+
+		<div class="single-input">
+			<span><i class="fas fa-user"></i></span> <input type="text"
+				th:field="*{username}" class="form-control" required minlength="2"
+				maxlength="40" placeholder="Username" />
+		</div>
+
+
+		<div class="single-input">
+			<span><i class="fas fa-unlock"></i></span> <input type="password"
+				th:field="*{password}" class="form-control" required minlength="6"
+				maxlength="10" placeholder="password" />
+		</div>
+
+
+
+		 <div class="single-input submit-btn">
+			<input type="submit" value="Login">
+		</div>
+			<center><b><span>Already registered? <a th:href="@{/}" style=" text-decoration: none;">Login here</a></span></b></center>
+		</form>
+		</div>
+	</div>
+</body>
+</html>
